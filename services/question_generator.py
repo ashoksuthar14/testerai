@@ -7,7 +7,7 @@ class QuestionGenerator:
     def __init__(self):
         load_dotenv()
         genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-        self.model = genai.GenerativeModel('gemini-pro')
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
     
     def generate_questions(self, topic, difficulty, num_questions=5):
         prompt = f"""Generate exactly {num_questions} multiple choice questions about {topic} at {difficulty} level.
